@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import StarryBackground from './Components/StarryBackground';
+import AboutMe from './Components/AboutMe';
+import NavBar from './Components/Navbar';
+import Projects from './Components/Projects';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+  }
+  html, body {
+    height: 100%; // Full height
+    width: 100%; // Full width
+    overflow: auto; 
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <NavBar />
+      <div className="App">
+        <StarryBackground />
+        <AboutMe />
+        <Projects />
+
+        {/* Other components here */}
+      </div>
+    </>
   );
 }
 
